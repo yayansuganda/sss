@@ -1,3 +1,0 @@
-"Nama Buah"	"Jumlah"
-"Melon"	"20"
-"Anggur"	"30" 
