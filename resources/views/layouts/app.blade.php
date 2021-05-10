@@ -48,23 +48,17 @@
     </style>
     <style type="text/css">
 
-        tr.odd td:first-child,
-        tr.even td:first-child {
-            padding-left: 4em;
-        }
-        .modal{
-            z-index: 100000 !important;
+        .modal-lg {
+            max-width: 90% !important;
         }
 
-        .select2-container--open {
-            z-index: 9999999 !important;
-        }
     </style>
 
-{{-- <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script> --}}
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 </head>
 <body>
 	<!-- begin #page-loader -->
@@ -150,7 +144,7 @@
 
 		<!-- begin #content -->
         @yield('content')
-
+        @include('layouts.modal._modal')
 		<!-- end #content -->
 
         <!-- begin theme-panel -->
@@ -278,6 +272,8 @@
 	<script src="{{ url('/') }}/assets/js/demo/table-manage-default.demo.min.js"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
     <script src="https://cdn.datatables.net/rowgroup/1.1.2/js/dataTables.rowGroup.min.js"></script>
+
+    <script src="{{ url('/') }}/js/app.js"></script>
 
     @stack('scripts')
 

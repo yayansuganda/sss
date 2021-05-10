@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [DashboardController::class, 'index']);
+Route::get('cchart', [DashboardController::class, 'c_chart']);
+Route::get('pchart', [DashboardController::class, 'p_chart']);
+Route::get('npchart', [DashboardController::class, 'np_chart']);
+Route::get('pareto', [DashboardController::class, 'pareto']);
