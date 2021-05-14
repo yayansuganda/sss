@@ -53,8 +53,54 @@
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>Histogram</td>
-                            <td><a href='#' class='modal-show edit btn btn-primary btn-block btn-sm' title='Edit' title2 = '$ket'><i class='fa fa-eye'></i> View Report</button></a></td>
+                            <td>U Chart</td>
+                            <td><a href="{{ url('uchart') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>G Chart</td>
+                            <td><a href="{{ url('gchart') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>T Chart</td>
+                            <td><a href="{{ url('tchart') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>8</td>
+                            <td>XmR Individuals</td>
+                            <td><a href="{{ url('xmr_individuals') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>9</td>
+                            <td>XmR Median R</td>
+                            <td><a href="{{ url('xmr_median_r') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td>XmR Trend</td>
+                            <td><a href="{{ url('xmr_trend') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>11</td>
+                            <td>Cusum</td>
+                            <td><a href="{{ url('special_cusum') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>12</td>
+                            <td>RunChart - Average</td>
+                            <td><a href="{{ url('run_average') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
+                        </tr>
+
+                        <tr>
+                            <td>13</td>
+                            <td>RunChart - Median</td>
+                            <td><a href="{{ url('run_median') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View Report</button></a></td>
                         </tr>
 
                     </tbody>

@@ -23,28 +23,12 @@
         },
 
         yAxis: {
-        min : '{{ $lcl }}',
-        max : '{{ $ucl }}',
-        plotLines: [{
-                color: 'GREEN',
-                width: 2,
-                value: '{{ $ucl }}',
-                label: {
-                    text: 'UCL : {{ $ucl }}'
-                }
-            }, {
+        plotLines: [ {
                 color: 'BLUE',
                 width: 2,
                 value: '{{ $c }}',
                 label: {
                     text: 'LC : {{ $c }}'
-                }
-            }, {
-                color: 'RED',
-                width: 2,
-                value: '{{ $lcl }}',
-                label: {
-                    text: 'LCL : {{ $lcl }}'
                 }
             }]
         },
@@ -53,6 +37,20 @@
             name: "Data",
             data: [
                     @foreach ($hasil as $key=>$record)
+                        parseFloat('{{$record[1]}}'),
+                    @endforeach
+                 ]
+        }, {
+            name: "UCL",
+            data: [
+                    @foreach ($hasil_ucl as $key=>$record)
+                        parseFloat('{{$record[0]}}'),
+                    @endforeach
+                 ]
+        }, {
+            name: "LCL",
+            data: [
+                    @foreach ($hasil_ucl as $key=>$record)
                         parseFloat('{{$record[1]}}'),
                     @endforeach
                  ]
