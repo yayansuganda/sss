@@ -151,7 +151,7 @@ class Upload_fileController extends Controller
                             $isi = explode('/',$value)[3];
 
                             if (Session::get('file') == explode('/',$value)[3]) {
-                                $checked = "<a class='btn-show btn   btn-success btn-sm' title2 = 'View & Set Data'>Success Set</button></a>";
+                                $checked = "<a class='btn   btn-success btn-sm' title2 = 'View & Set Data'>Success Set</button></a>";
 
                             } else {
                                 $checked = "<div class='form-check'>
