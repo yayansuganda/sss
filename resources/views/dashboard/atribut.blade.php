@@ -9,7 +9,7 @@
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Six Sigma</h1>
+    <h1 class="page-header">SPC Atribut</h1>
     <!-- end page-header -->
 
     <!-- begin panel -->
@@ -18,7 +18,7 @@
             <div class="panel-heading-btn">
 
             </div>
-            <h4 class="panel-title">Six Sigma</h4>
+            <h4 class="panel-title">SPC Atribut</h4>
         </div>
         <div class="panel-body">
 
@@ -65,42 +65,6 @@
                             <td>7</td>
                             <td>T Chart</td>
                             <td><a href="{{ url('tchart') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View HP Chart</button></a></td>
-                        </tr>
-
-                        <tr>
-                            <td>8</td>
-                            <td>XmR Individuals</td>
-                            <td><a href="{{ url('xmr_individuals') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View HP Chart</button></a></td>
-                        </tr>
-
-                        <tr>
-                            <td>9</td>
-                            <td>XmR Median R</td>
-                            <td><a href="{{ url('xmr_median_r') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View HP Chart</button></a></td>
-                        </tr>
-
-                        <tr>
-                            <td>10</td>
-                            <td>XmR Trend</td>
-                            <td><a href="{{ url('xmr_trend') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View HP Chart</button></a></td>
-                        </tr>
-
-                        <tr>
-                            <td>11</td>
-                            <td>Cusum</td>
-                            <td><a href="{{ url('special_cusum') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View HP Chart</button></a></td>
-                        </tr>
-
-                        <tr>
-                            <td>12</td>
-                            <td>RunChart - Average</td>
-                            <td><a href="{{ url('run_average') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View HP Chart</button></a></td>
-                        </tr>
-
-                        <tr>
-                            <td>13</td>
-                            <td>RunChart - Median</td>
-                            <td><a href="{{ url('run_median') }}" class="btn-show btn btn-block btn-primary btn-secondary btn-sm" title="Detail"><i class="fa fa-eye"></i> View HP Chart</button></a></td>
                         </tr>
 
                     </tbody>

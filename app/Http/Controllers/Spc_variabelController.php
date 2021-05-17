@@ -3,15 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class Spc_variabelController extends Controller
 {
     public function xmr_individuals()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
@@ -43,10 +47,12 @@ class Spc_variabelController extends Controller
 
     public function xmr_median_r()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
@@ -101,10 +107,12 @@ class Spc_variabelController extends Controller
 
     public function xmr_trend()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 

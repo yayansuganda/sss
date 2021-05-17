@@ -28,6 +28,7 @@
     <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
 	<link href="{{ url('/') }}/assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css" rel="stylesheet" />
 	<link href="{{ url('/') }}/assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowgroup/1.1.2/css/rowGroup.dataTables.min.css">
 	<!-- ================== END PAGE LEVEL STYLE ================== -->
 
     <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
@@ -46,6 +47,16 @@
             margin: 0 auto;
         }
     </style>
+
+    @if (Request::segment(1) == 'upload_file')
+   <style>
+        tr.odd td:first-child,
+        tr.even td:first-child {
+            padding-left: 4em;
+        }
+    </style>
+   @endif
+
     <style type="text/css">
 
         .modal-lg {
@@ -123,12 +134,57 @@
 
 
 
-                    <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
-						<a href="{{url('dashboard')}}">
+                    {{-- <li class="{{ Request::is('/') ? 'active' : '' }}">
+						<a href="{{url('/')}}">
 							<i class="ion-ios-pulse-strong"></i>
 							<span>Dashboard</span>
 						</a>
+					</li> --}}
+
+                    <li class="{{ Request::is('perusahaan') ? 'active' : '' }}">
+						<a href="{{url('perusahaan')}}">
+							<i class="ion-ios-color-filter-outline bg-purple"></i>
+							<span>Company</span>
+						</a>
 					</li>
+
+                    <li class="{{ Request::is('upload_file') ? 'active' : '' }}">
+						<a href="{{url('upload_file')}}">
+							<i class="ion-ios-infinite-outline bg-gradient-aqua"></i>
+							<span>Upload File</span>
+						</a>
+					</li>
+
+                    <li class="has-sub">
+						<a href="javascript:;">
+						    <b class="caret"></b>
+						    <i class="ion-ios-grid-view-outline bg-green"></i>
+						    <span>Control Chart (SPC)</span>
+						</a>
+						<ul class="sub-menu">
+                            <li class="{{ Request::is('variabel') ? 'active' : '' }}"><a href="{{url('variabel')}}">Variabel</a></li>
+                            <li class="{{ Request::is('atribut') ? 'active' : '' }}"><a href="{{url('atribut')}}">Atribut</a></li>
+                            <li class="{{ Request::is('special') ? 'active' : '' }}"><a href="{{url('special')}}">Special</a></li>
+
+						</ul>
+                    </li>
+
+                    <li class="{{ Request::is('line') ? 'active' : '' }}">
+						<a href="{{url('line')}}">
+							<i class="ion-stats-bars bg-gradient-orange"></i>
+							<span>Run Chart</span>
+						</a>
+					</li>
+
+
+                    <li class="{{ Request::is('pareto') ? 'active' : '' }}">
+						<a href="{{url('pareto')}}">
+							<i class="ion-ios-pulse-strong"></i>
+							<span>Pareto</span>
+						</a>
+					</li>
+
+
 
 
 			        <!-- begin sidebar minify button -->
@@ -144,7 +200,9 @@
 
 		<!-- begin #content -->
         @yield('content')
+        @include('layouts.modal._preview')
         @include('layouts.modal._modal')
+
 		<!-- end #content -->
 
         <!-- begin theme-panel -->
@@ -274,6 +332,7 @@
     <script src="https://cdn.datatables.net/rowgroup/1.1.2/js/dataTables.rowGroup.min.js"></script>
 
     <script src="{{ url('/') }}/js/app.js"></script>
+    <script src="{{ url('/') }}/js/sweetalert2.min.js"></script>
 
     @stack('scripts')
 

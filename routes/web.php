@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\RunController;
 use App\Http\Controllers\Spc_variabelController;
 use App\Http\Controllers\SpecialController;
+use App\Http\Controllers\Upload_fileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/', [PerusahaanController::class, 'index']);
 Route::get('cchart', [DashboardController::class, 'c_chart']);
 Route::get('pchart', [DashboardController::class, 'p_chart']);
 Route::get('npchart', [DashboardController::class, 'np_chart']);
@@ -36,3 +39,21 @@ Route::get('special_cusum', [SpecialController::class, 'special_cusum']);
 
 Route::get('run_average', [RunController::class, 'run_average']);
 Route::get('run_median', [RunController::class, 'run_median']);
+
+
+ Route::resources([
+        'upload_file' => Upload_fileController::class,
+        'perusahaan' => PerusahaanController::class,
+        'department' => DepartmentController::class
+    ]);
+Route::post('/table/data/upload_file', [Upload_fileController::class, 'isi_datatable'])->name('table.upload_file');
+Route::post('/table/data/perusahaan', [PerusahaanController::class, 'isi_datatable'])->name('table.perusahaan');
+Route::post('/table/data/department', [DepartmentController::class, 'isi_datatable'])->name('table.department');
+Route::get('create/department/{id}', [DepartmentController::class, 'create2'])->name('department.create2');
+Route::get('department/ajax/{id}', [Upload_fileController::class, 'department']);
+
+Route::get('atribut', [DashboardController::class, 'index_atribut']);
+Route::get('variabel', [DashboardController::class, 'index_variabel']);
+Route::get('special', [DashboardController::class, 'index_special']);
+Route::get('line', [DashboardController::class, 'index_line']);
+Route::get('pareto', [DashboardController::class, 'index_pareto']);

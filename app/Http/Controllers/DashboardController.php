@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Latihan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Khill\Lavacharts\Lavacharts;
 
 class DashboardController extends Controller
@@ -32,9 +34,35 @@ class DashboardController extends Controller
         return view('dashboard.dashboard');
     }
 
+    public function index_variabel()
+    {
+        return view('dashboard.variabel');
+    }
+
+    public function index_atribut()
+    {
+        return view('dashboard.atribut');
+    }
+
+    public function index_special()
+    {
+        return view('dashboard.special');
+    }
+
+    public function index_line()
+    {
+        return view('dashboard.line');
+    }
+
+
+
     public function c_chart()
     {
-        $csvFile = public_path('testing2.txt');
+
+        // dd(explode('-',Session::get('file')));
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
         while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
@@ -57,10 +85,12 @@ class DashboardController extends Controller
 
     public function p_chart()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
@@ -87,10 +117,12 @@ class DashboardController extends Controller
 
     public function np_chart()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
@@ -111,16 +143,18 @@ class DashboardController extends Controller
     }
 
 
-    public function pareto()
+    public function index_pareto()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        $jumlah = 0;
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
+        $jumlah = 0;
         for ($i=1; $i < count($data) ; $i++) {
             $jumlah += floatval($data[$i][1]);
             $hasil1[] = [$data[$i][0], $jumlah];
@@ -137,16 +171,18 @@ class DashboardController extends Controller
         }
 
 
-        return view('chart_report.pareto',compact('hasil','hasil1','hasil_persen'));
+        return view('dashboard.pareto',compact('hasil','hasil1','hasil_persen'));
     }
 
 
     public function u_chart()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
@@ -174,10 +210,12 @@ class DashboardController extends Controller
 
     public function g_chart()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
@@ -199,10 +237,12 @@ class DashboardController extends Controller
 
     public function t_chart()
     {
-        $csvFile = public_path('testing.csv');
+        $path_url = explode('-',Session::get('file'));
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+        $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
-        while (  ($line_of_text = fgetcsv($file_handle,1024,';')) !== false ) {
+        while (  ($line_of_text = fgetcsv($file_handle,1024,'	')) !== false ) {
             $data[]  = $line_of_text ;
         }
 
