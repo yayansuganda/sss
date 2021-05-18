@@ -141,7 +141,7 @@
 						</a>
 					</li> --}}
 
-                    <li class="{{ Request::is('perusahaan') ? 'active' : '' }}">
+                    {{-- <li class="{{ Request::is('perusahaan') ? 'active' : '' }}">
 						<a href="{{url('perusahaan')}}">
 							<i class="ion-ios-color-filter-outline bg-purple"></i>
 							<span>Company</span>
@@ -153,7 +153,7 @@
 							<i class="ion-ios-infinite-outline bg-gradient-aqua"></i>
 							<span>Upload File</span>
 						</a>
-					</li>
+					</li> --}}
 
                     <li class="has-sub">
 						<a href="javascript:;">

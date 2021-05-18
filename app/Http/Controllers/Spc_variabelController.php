@@ -10,7 +10,7 @@ class Spc_variabelController extends Controller
 {
     public function xmr_individuals()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -47,7 +47,7 @@ class Spc_variabelController extends Controller
 
     public function xmr_median_r()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -107,7 +107,7 @@ class Spc_variabelController extends Controller
 
     public function xmr_trend()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');

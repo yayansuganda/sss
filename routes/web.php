@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PerusahaanController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index_variabel']);
 Route::get('cchart', [DashboardController::class, 'c_chart']);
 Route::get('pchart', [DashboardController::class, 'p_chart']);
 Route::get('npchart', [DashboardController::class, 'np_chart']);

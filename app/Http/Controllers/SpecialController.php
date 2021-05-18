@@ -10,7 +10,7 @@ class SpecialController extends Controller
 {
     public function special_cusum()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');

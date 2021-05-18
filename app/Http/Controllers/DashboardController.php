@@ -60,7 +60,7 @@ class DashboardController extends Controller
     {
 
         // dd(explode('-',Session::get('file')));
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -85,7 +85,7 @@ class DashboardController extends Controller
 
     public function p_chart()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -117,7 +117,7 @@ class DashboardController extends Controller
 
     public function np_chart()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -145,7 +145,7 @@ class DashboardController extends Controller
 
     public function index_pareto()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -177,7 +177,7 @@ class DashboardController extends Controller
 
     public function u_chart()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -210,7 +210,7 @@ class DashboardController extends Controller
 
     public function g_chart()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
@@ -237,7 +237,7 @@ class DashboardController extends Controller
 
     public function t_chart()
     {
-        $path_url = explode('-',Session::get('file'));
+        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
         $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
