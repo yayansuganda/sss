@@ -10,8 +10,8 @@ class RunController extends Controller
 {
     public function run_average()
     {
-        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
-        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+         $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt');
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
@@ -34,8 +34,8 @@ class RunController extends Controller
 
     public function run_median()
     {
-        $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
-        $url = Storage::url($path_url[0].'/'.$path_url[1].'/'.Session::get('file'));
+         $path_url = explode('-',"Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt");
+        $url = Storage::url($path_url[0].'/'.$path_url[1].'/Jakarta_Bus-Bus_Schedule_Planning-24_hours-17-05-2021.txt');
         $csvFile = public_path($url);
         $file_handle = fopen($csvFile, 'r');
         $data = [];
